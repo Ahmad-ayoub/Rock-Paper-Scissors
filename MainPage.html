@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="MainPageStyle.css" />
+    <title>Rock,Paper,Scissors Game</title>
+  </head>
+  <body>
+    <h1>Rock, Paper, Scissors!</h1>
+
+    <h4>Current score:</h4>
+
+    <h4>(User) 0 - 0 (Computer)</h4>
+
+    <div id="results"></div>
+
+    <div class="images">
+      <img
+        src="Images/Rock.png"
+        onclick="startGame()"
+        id="Rock"
+        alt="Rock_Image"
+      />
+      <img
+        src="Images/Paper.png"
+        onclick="startGame()"
+        id="Paper"
+        alt="Paper_Image"
+      />
+      <img
+        src="Images/Scissors.png"
+        onclick="startGame()"
+        id="Scissors"
+        alt="Scissors_Image"
+      />
+    </div>
+
+    <script src="RPSfunction.js"></script>
+  </body>
+</html>
