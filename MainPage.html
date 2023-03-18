@@ -12,27 +12,22 @@
 
     <h4>Current score:</h4>
 
-    <h4>(User) 0 - 0 (Computer)</h4>
+    <h4 id="score">(User) 0 - 0 (Computer)</h4>
 
     <div id="results"></div>
 
     <div class="images">
-      <img
-        src="Images/Rock.png"
-        onclick="startGame()"
-        id="Rock"
-        alt="Rock_Image"
-      />
+      <img src="Images/Rock.png" id="Rock" data-value="Rock" alt="Rock_Image" />
       <img
         src="Images/Paper.png"
-        onclick="startGame()"
         id="Paper"
+        data-value="Paper"
         alt="Paper_Image"
       />
       <img
         src="Images/Scissors.png"
-        onclick="startGame()"
         id="Scissors"
+        data-value="Scissors"
         alt="Scissors_Image"
       />
     </div>
