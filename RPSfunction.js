@@ -4,65 +4,50 @@ const paperImage = document.getElementById("Paper");
 const scissorsImage = document.getElementById("Scissors");
 
 // add event listeners to each image element
-let chooseRock = rockImage.addEventListener("click", startGame);
-let choosePaper = paperImage.addEventListener("click", startGame);
-let chooseScissors = scissorsImage.addEventListener("click", startGame);
+rockImage.addEventListener("click", startGame);
+paperImage.addEventListener("click", startGame);
+scissorsImage.addEventListener("click", startGame);
 let finalChoiceU = "";
 
+let user = 0;
+let computer = 0;
+
 function startGame(image) {
-  let user = 0;
-  let computer = 0;
-  finalChoiceU = image.target.dataset.value;
-  debugger;
+  const finalChoiceU = image.target.dataset.value;
+  const choices = ["Rock", "Paper", "Scissors"];
+  const computerSelect = Math.floor(Math.random() * choices.length);
+  const finalChoiceC = choices[computerSelect];
 
-  let choices = ["Rock", "Paper", "Scissors"];
-
-  //function userChoice() {
-  //let userSelect = Math.floor(Math.random() * choices.length);
-
-  //return finalChoiceU;
-  //}
-
-  //function computerChoice() {
-  let computerSelect = Math.floor(Math.random() * choices.length);
-  let finalChoiceC = choices[computerSelect];
-
-  //return finalChoiceC;
-  //}
-
-  //function compareChoices(finalChoiceC, finalChoiceU) {
-  let results = document.querySelector("#results");
-  let scoreEach = document.querySelector("#score");
+  const results = document.querySelector("#results");
+  const scoreU = document.querySelector("#scoreU");
+  const scoreC = document.querySelector("#scoreC");
   let score = "";
   let answer = "";
   switch (true) {
     case finalChoiceC === finalChoiceU:
-      answer = `User chose ${finalChoiceU}\nComputer chose ${finalChoiceC}\nIt's a draw`;
+      answer = `You chose ${finalChoiceU}<br><br>Computer chose ${finalChoiceC}<br><br>It's a draw`;
       break;
     case finalChoiceC === "Rock" && finalChoiceU === "Scissors":
     case finalChoiceC === "Paper" && finalChoiceU === "Rock":
     case finalChoiceC === "Scissors" && finalChoiceU === "Paper":
-      answer = `User chose ${finalChoiceU}\nComputer chose ${finalChoiceC}\nComputer wins!`;
+      answer = `You chose ${finalChoiceU}<br><br>Computer chose ${finalChoiceC}<br><br>Computer wins!`;
       computer++;
-      score = `${user} - ${computer}`;
+      score = `${computer}`;
+      scoreC.textContent = score;
       break;
     case finalChoiceC === "Rock" && finalChoiceU === "Paper":
     case finalChoiceC === "Paper" && finalChoiceU === "Scissors":
     case finalChoiceC === "Scissors" && finalChoiceU === "Rock":
-      answer = `User chose ${finalChoiceU}\nComputer chose ${finalChoiceC}\nYou win!`;
+      answer = `You chose ${finalChoiceU}<br><br>Computer chose ${finalChoiceC}<br><br>You win!`;
       user++;
-      score = `${user} - ${computer}`;
+      score = `${user}`;
+      scoreU.textContent = score;
       break;
     default:
       answer = "Invalid choices!";
   }
 
-  let finalScore = document.createTextNode(score);
-  scoreEach.style.lineheight = "2";
-  scoreEach.appendChild(finalScore);
-
-  let answerPaste = document.createTextNode(answer);
+  results.innerHTML = answer;
   results.style.lineheight = "2";
-  results.appendChild(answerPaste);
+  results.style.textAlign = "center";
 }
-//}
