@@ -18,4 +18,6 @@ The game can go on continously and either you or the computer can keep racking u
 
 Summary:
 
-This is my second Javascript based project with the Software Dev Mastermind Mentorship program. It took me about 5 days with 3 to 4 hours approximately each day.  - Web Dev in training -  https://www.linkedin.com/in/ahmad-ayoub/
+This is my second Javascript based project with the Software Dev Mastermind Mentorship program. It took me about 5 days with 3 to 4 hours approximately each day. 
+- Web Dev in training 
+- https://www.linkedin.com/in/ahmad-ayoub/
