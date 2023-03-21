@@ -48,7 +48,5 @@ function startGame(image) {
   }
 
   results.innerHTML = answer;
-  results.style.lineheight = "2";
-  results.style.textAlign = "center";
   results.classList.add("new");
 }
