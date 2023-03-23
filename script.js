@@ -67,5 +67,6 @@ function displayResult() {
   userChoiceDisplay.textContent = "You chose " + userSelect;
   computerChoiceDisplay.textContent = "Computer chose " + computerSelectFinal;
   finalResultsDisplay.textContent = gameResult;
+
   finalResultsDisplay.classList.add("new");
 }
